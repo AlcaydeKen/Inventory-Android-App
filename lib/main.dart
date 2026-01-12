@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:inventory_app/views/widget_tree.dart';
 import 'firebase_options.dart';
 
 void main() async {
@@ -16,7 +17,7 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  int currentIndex = 0;
+  
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -27,37 +28,7 @@ class _MyAppState extends State<MyApp> {
           brightness: Brightness.dark,
         ),
       ),
-      home: Scaffold(
-        appBar: AppBar(title: Text('Inventory App'), centerTitle: true),
-        body: [
-          Center(child: Text('Inventory')),
-          Center(child: Text('Manage')),
-          Center(child: Text('Order')),
-          Center(child: Text('Profile')),
-        ][currentIndex],
-
-        bottomNavigationBar: NavigationBar(
-          destinations: [
-            NavigationDestination(
-              icon: Icon(Icons.inventory),
-              label: 'Inventory',
-            ),
-            NavigationDestination(icon: Icon(Icons.edit), label: 'Manage'),
-            NavigationDestination(
-              icon: Icon(Icons.shopping_cart),
-              label: 'Order',
-            ),
-            NavigationDestination(icon: Icon(Icons.person), label: 'Profile'),
-          ],
-
-          onDestinationSelected: (int value) {
-            setState(() {
-              currentIndex = value;
-            });
-          },
-          selectedIndex: currentIndex,
-        ),
-      ),
+      home: WidgetTree(),
     );
   }
 }
