@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:inventory_app/views/widget_tree.dart';
+import 'package:inventory_app/views/pages/login_page.dart';
+import 'package:inventory_app/views/pages/register_page.dart';
+import 'package:inventory_app/views/pages/reset_password_page.dart';
 import 'firebase_options.dart';
 
 void main() async {
@@ -28,7 +31,13 @@ class _MyAppState extends State<MyApp> {
           brightness: Brightness.dark,
         ),
       ),
-      home: WidgetTree(),
+      initialRoute: '/login',
+      routes: {
+        '/login': (context) => const LoginPage(),
+        '/register': (context) => const RegisterPage(),
+        '/reset': (context) => const ResetPasswordPage(),
+        '/home': (context) => const WidgetTree(),
+      },
     );
   }
 }
