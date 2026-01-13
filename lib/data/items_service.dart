@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/widgets.dart';
+import 'logs_service.dart';
 
 ValueNotifier<ItemsService> itemsService = ValueNotifier(ItemsService());
 
@@ -31,7 +32,14 @@ class ItemsService {
       'lowercaseName': name.toLowerCase(),
       'createdAt': FieldValue.serverTimestamp(),
     };
-    return await _col.add(data);
+    final ref = await _col.add(data);
+    try {
+      await logsService.logEvent(
+        text: 'Added item $name',
+        meta: {'itemId': ref.id, 'name': name, 'qty': qty},
+      );
+    } catch (_) {}
+    return ref;
   }
 
   Future<void> updateItem({
@@ -45,9 +53,26 @@ class ItemsService {
       'lowercaseName': name.toLowerCase(),
     };
     await _col.doc(id).update(data);
+    try {
+      await logsService.logEvent(
+        text: 'Updated item $name',
+        meta: {'itemId': id, 'name': name, 'qty': qty},
+      );
+    } catch (_) {}
   }
 
   Future<void> deleteItem({required String id}) async {
+    String? name;
+    try {
+      final snap = await _col.doc(id).get();
+      name = snap.data()?['name'] as String?;
+    } catch (_) {}
     await _col.doc(id).delete();
+    try {
+      await logsService.logEvent(
+        text: 'Deleted item ${name ?? id}',
+        meta: {'itemId': id, 'name': name},
+      );
+    } catch (_) {}
   }
 }

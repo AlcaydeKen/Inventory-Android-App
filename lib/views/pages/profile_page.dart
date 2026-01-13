@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:inventory_app/auth/auth_service.dart';
+import 'logs_page.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
 class Profile extends StatefulWidget {
@@ -221,6 +222,13 @@ class _ProfileState extends State<Profile> {
                 style: ElevatedButton.styleFrom(backgroundColor: Colors.red),
                 onPressed: () => _confirmAndDeleteAccount(user?.email),
                 child: const Text('Delete account'),
+              ),
+              const SizedBox(height: 12),
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (_) => const Logs()));
+                },
+                child: const Text('View Logs'),
               ),
               const Spacer(),
               ElevatedButton(
