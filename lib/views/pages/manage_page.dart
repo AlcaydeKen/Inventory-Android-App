@@ -1,5 +1,3 @@
-// ignore_for_file: use_build_context_synchronously
-
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:inventory_app/data/items_service.dart';
@@ -296,7 +294,6 @@ class _ManageState extends State<Manage> {
             ],
           ),
 
-          // Floating add button in bottom-right of this page area
           Positioned(
             right: 0,
             bottom: 0,

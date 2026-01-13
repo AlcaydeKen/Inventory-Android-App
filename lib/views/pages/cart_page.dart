@@ -79,7 +79,6 @@ class Cart extends StatelessWidget {
                       items: items,
                       userId: uid,
                     );
-                    // log purchase event
                     await logsService.logEvent(
                       text: 'Placed order ${ref.id}',
                       meta: {
