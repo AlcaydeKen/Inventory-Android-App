@@ -6,17 +6,24 @@ class NavbarWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ValueListenableBuilder(valueListenable: selectedPageNotifier, builder: (context, selectedPage, child) {
-      return NavigationBar(
+    return ValueListenableBuilder(
+      valueListenable: selectedPageNotifier,
+      builder: (context, selectedPage, child) {
+        return NavigationBar(
           destinations: [
             NavigationDestination(
               icon: Icon(Icons.inventory),
               label: 'Inventory',
             ),
             NavigationDestination(icon: Icon(Icons.edit), label: 'Manage'),
+            NavigationDestination(icon: Icon(Icons.store), label: 'Order'),
             NavigationDestination(
               icon: Icon(Icons.shopping_cart),
-              label: 'Order',
+              label: 'Cart',
+            ),
+            NavigationDestination(
+              icon: Icon(Icons.check),
+              label: 'Purchases',
             ),
             NavigationDestination(icon: Icon(Icons.person), label: 'Profile'),
           ],
@@ -26,6 +33,7 @@ class NavbarWidget extends StatelessWidget {
           },
           selectedIndex: selectedPage,
         );
-    },);
+      },
+    );
   }
 }

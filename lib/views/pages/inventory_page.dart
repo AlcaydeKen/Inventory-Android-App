@@ -44,10 +44,12 @@ class _InventoryState extends State<Inventory> {
               child: StreamBuilder<QuerySnapshot<Map<String, dynamic>>>(
                 stream: itemsService.value.streamItems(),
                 builder: (context, snapshot) {
-                  if (snapshot.hasError)
+                  if (snapshot.hasError) {
                     return Center(child: Text('Error: ${snapshot.error}'));
-                  if (!snapshot.hasData)
+                  }
+                  if (!snapshot.hasData) {
                     return const Center(child: CircularProgressIndicator());
+                  }
 
                   final docs = snapshot.data!.docs
                       .map(
@@ -69,7 +71,6 @@ class _InventoryState extends State<Inventory> {
                       child: DataTable(
                         columnSpacing: 48.0,
                         horizontalMargin: 24.0,
-                        dataRowHeight: 56.0,
                         headingRowHeight: 56.0,
                         columns: const [
                           DataColumn(label: Text('Item Name')),

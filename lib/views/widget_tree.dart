@@ -3,7 +3,9 @@ import 'package:inventory_app/data/notifiers.dart';
 import 'package:inventory_app/views/pages/inventory_page.dart';
 import 'package:inventory_app/views/pages/manage_page.dart';
 import 'package:inventory_app/views/pages/order_page.dart';
+import 'package:inventory_app/views/pages/cart_page.dart';
 import 'package:inventory_app/views/pages/profile_page.dart';
+import 'package:inventory_app/views/pages/purchases_page.dart';
 
 import 'widgets/navbar_widget.dart';
 
@@ -11,6 +13,8 @@ List<Widget> pages = [
   Inventory(),
   Manage(),
   Order(),
+  Cart(),
+  Purchases(),
   Profile(),
 ];
 
