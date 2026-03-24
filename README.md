@@ -79,5 +79,7 @@ flutter run
 This app was created as part of a job application project for 2026, showcasing mobile development skills using Flutter and SQLite for local data persistence.
 
 👨‍💻 Author
+
 Ken Jared Alcayde
+
 GitHub: [@AlcaydeKen](https://github.com/AlcaydeKen)
