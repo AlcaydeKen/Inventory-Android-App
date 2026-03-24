@@ -1,16 +1,83 @@
-# inventory_app
+# 📱 Inventory Android App
 
-A new Flutter project.
+Inventory Android App is a native mobile application built using **Flutter/Android Studio** to help users manage and track inventory items. It lets users add, view, update, and delete inventory records — perfect for small stores, personal collections, or stock tracking.
 
-## Getting Started
+## ✨ Features
 
-This project is a starting point for a Flutter application.
+- 📝 Add new inventory items  
+- 📊 View list of all items  
+- ✏️ Update existing item details  
+- ❌ Delete items  
+- 🔎 Search through inventory  
+- 🚀 Simple and intuitive mobile UI  
+- 💾 Local persistent storage (SQLite or built‑in storage)
 
-A few resources to get you started if this is your first Flutter project:
+## 🛠️ Tech Stack
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+- **Framework:** Flutter  
+- **Language:** Dart  
+- **Database:** SQLite or local device storage  
+- **IDE:** Android Studio or Visual Studio Code
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## 📂 Project Structure
+
+```bash
+Inventory-Android-App/
+├── android/              # Native Android platform code
+├── ios/                  # iOS platform support (if enabled)
+├── lib/                  # Main Flutter Dart code
+│   ├── main.dart         # App entrypoint
+│   ├── screens/          # UI screens
+│   ├── models/           # Data models
+│   ├── db/               # Database helper files
+│   └── widgets/          # Reusable widgets
+├── pubspec.yaml          # Dependencies & config
+├── README.md
+└── assets/               # Images, icons, fonts
+```
+
+🚀 Installation Guide
+
+1️⃣ Clone the repository
+```bash
+git clone https://github.com/AlcaydeKen/Inventory-Android-App.git
+cd Inventory-Android-App
+```
+
+2️⃣ Install dependencies
+```bash
+flutter pub get
+```
+3️⃣ Connect a device or start an emulator
+
+- Use Android Studio AVD or connect a physical Android device with USB debugging enabled.
+
+4️⃣ Run the app
+```bash
+flutter run
+```
+
+📱 Screens / Main UI
+- 🏠 Main inventory list
+- ➕ Add new item screen
+- ✏️ Update item screen
+- 🔍 Search inventory
+- ⚙️ Settings (if available)
+
+🗄️ Storage
+- The app uses local device storage (SQLite or shared preferences via Flutter plugin) to save inventory data persistently.
+
+🔮 Future Improvements
+- 📸 Add image support for items
+- 📦 Export inventory to CSV/Excel
+- 🔔 Low stock notifications
+- 🔐 User login/permissions
+- ☁️ Cloud sync (Firebase/Backend API)
+
+🎯 Purpose
+
+This app was created as part of a job application project for 2026, showcasing mobile development skills using Flutter and SQLite for local data persistence.
+
+👨‍💻 Author
+Ken Jared Alcayde
+GitHub: [@AlcaydeKen](https://github.com/AlcaydeKen)
