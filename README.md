@@ -6,7 +6,7 @@ Inventory Android App is a native mobile application built using **Flutter/Andro
 
 This app was created as part of a job application project for 2026, showcasing mobile development skills using Flutter and SQLite for local data persistence.
 
-## 🧠 What I Learned
+## 🧠 What I Learned 
 - Building mobile interfaces with Flutter/Android Studio  
 - Managing local data storage using SQLite  
 - Implementing CRUD operations in a mobile environment  
